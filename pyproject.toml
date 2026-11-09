@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "redis-route-worker"
+version = "0.1.0"
+description = "Threaded task routing over Redis Lists and Pub/Sub"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["redis>=8.1.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "ruff>=0.1", "build>=1", "twine>=6"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
